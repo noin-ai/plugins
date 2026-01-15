@@ -147,7 +147,7 @@ ExecutionContext:
   context:
     project_path: /path/to/project
     timestamp: 2025-01-16T10:30:00Z
-    user: liubiao
+    user: noin-ai
 
   env:
     # 从环境变量读取

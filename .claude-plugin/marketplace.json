@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "description": "Multi-agent Claude Code plugins marketplace",
   "owner": {
-    "name": "liubiao",
-    "email": "liubiao@users.noreply.github.com"
+    "name": "noin-ai",
+    "email": "hi@noin.ai"
   },
   "plugins": [
     {
