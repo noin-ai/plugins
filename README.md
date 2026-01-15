@@ -4,6 +4,7 @@ Multi-agent Claude Code plugin powered by [noin.ai](https://noin.ai).
 
 [![GitHub](https://img.shields.io/badge/GitHub-noin--ai%2Fplugins-blue)](https://github.com/noin-ai/plugins)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![中文文档](https://img.shields.io/badge/中文-README-orange)](README.zh-CN.md)
 
 ## What is noin.ai?
 
@@ -13,20 +14,6 @@ Multi-agent Claude Code plugin powered by [noin.ai](https://noin.ai).
 - Access to GPT-5.2, Codex, Gemini and more through a unified interface
 - No additional API keys required - authentication handled by noin.ai
 - Specialized agents for different tasks (code, review, design, brainstorm)
-
----
-
-## 中文摘要
-
-**noin-ai** 是一个 Claude Code 多智能体插件，由 [noin.ai](https://noin.ai) 提供 API 支持。
-
-**核心功能：**
-- `/code` - 代码生成（Codex）
-- `/review` - 代码审查（GPT-5.2）
-- `/design` - UI 设计（Gemini）
-- `/brainstorm` - 多智能体辩论
-
-**快速开始：** 见下方 [Quickstart](#quickstart)
 
 ---
 
