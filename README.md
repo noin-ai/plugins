@@ -55,6 +55,14 @@ git clone https://github.com/noin-ai/plugins.git
 | `/design <component>` | UI design with Gemini |
 | `/design --implement <component>` | Design + generate code |
 
+### Multi-Agent Brainstorm
+
+| Command | Description |
+|---------|-------------|
+| `/brainstorm <topic>` | Multi-agent debate (Critic + Creative + Pragmatist) |
+| `/brainstorm <topic> --rounds 3` | Extended 3-round discussion |
+| `/brainstorm <topic> --output plan` | Output as implementation plan |
+
 ### Custom Workflows
 
 | Command | Description |
@@ -77,6 +85,11 @@ Code Agents
     ├── Codex / Codex-max: Code generation
     ├── GPT-5.2: Code review, security analysis
     └── Gemini: UI/UX design
+
+Multi-Agent Brainstorm
+    ├── Critic (GPT-5.2): Quality, risks, edge cases
+    ├── Creative (Gemini): UX, elegance, innovation
+    └── Pragmatist (Codex-max): Feasibility, cost, effort
 
 Workflow Agents
     ├── browser-agent: Web scraping, automation
@@ -177,6 +190,7 @@ Skills define when and how to route tasks to agents:
 | `code-generation` | write, implement, create, fix | codex-coder / codex-max-coder |
 | `code-review` | review, check, audit, security | gpt52-reviewer |
 | `ui-design` | design, UI, layout, component | gemini-designer |
+| `brainstorm` | brainstorm, debate, perspectives | gpt52 + gemini + codex-max |
 | `workflow-executor` | run-workflow, execute workflow | Multiple agents |
 
 ## Development
