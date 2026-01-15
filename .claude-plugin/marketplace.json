@@ -8,7 +8,10 @@
   "plugins": [
     {
       "name": "noin-plugins",
-      "source": ".",
+      "source": {
+        "source": "github",
+        "repo": "noin-ai/plugins"
+      },
       "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
       "version": "0.1.0"
     }
