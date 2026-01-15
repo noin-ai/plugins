@@ -10,10 +10,7 @@
     {
       "name": "noin-plugins",
       "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/noin-ai/plugins"
-      }
+      "source": "github:noin-ai/plugins"
     }
   ]
 }
