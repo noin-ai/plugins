@@ -1,0 +1,16 @@
+{
+  "name": "noin-ai-plugins",
+  "owner": {
+    "name": "liubiao",
+    "url": "https://github.com/noin-ai"
+  },
+  "description": "Multi-agent Claude Code plugins marketplace",
+  "plugins": [
+    {
+      "name": "noin-plugins",
+      "source": ".",
+      "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
+      "version": "0.1.0"
+    }
+  ]
+}

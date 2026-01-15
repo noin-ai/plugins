@@ -5,12 +5,18 @@ Multi-agent Claude Code plugin leveraging specialized AI models for different ta
 ## Installation
 
 ```bash
-# Install from GitHub
-claude plugin install github:noin-ai/plugins
+# Add marketplace source
+/plugin marketplace add noin-ai/plugins
 
-# Or clone and install locally
+# Install the plugin
+/plugin install noin-plugins
+```
+
+### Local Development
+
+```bash
 git clone https://github.com/noin-ai/plugins.git
-claude plugin install ./plugins --scope local
+/plugin install ./plugins --scope local
 ```
 
 ## Agents
