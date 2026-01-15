@@ -1,0 +1,11 @@
+{
+  "name": "noin-plugins",
+  "description": "Multi-agent system: Codex/GPT-5.2 for coding, Gemini for UI design",
+  "version": "0.1.0",
+  "author": {
+    "name": "liubiao"
+  },
+  "commands": "./commands/",
+  "agents": "./agents/",
+  "skills": "./skills/"
+}
