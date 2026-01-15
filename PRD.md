@@ -93,8 +93,16 @@ Opus 整合输出
 ## 安装
 
 ```bash
-# GitHub 仓库安装
-claude plugins install github:liubiao/noin-plugins
+# 方式一：添加 marketplace 后安装
+/plugin marketplace add noin-ai/plugins
+/plugin install noin-plugins@noin-ai/plugins
+
+# 方式二：直接从 GitHub 安装
+claude plugin install github:noin-ai/plugins
+
+# 方式三：本地开发安装
+git clone https://github.com/noin-ai/plugins.git
+claude plugin install ./plugins --scope local
 ```
 
 ## 配置
