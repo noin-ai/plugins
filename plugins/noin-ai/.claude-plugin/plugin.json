@@ -1,10 +1,10 @@
 {
   "name": "noin-ai",
-  "version": "0.1.0",
-  "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
+  "version": "0.2.0",
+  "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design, multi-agent brainstorming",
   "author": {
     "name": "noin-ai",
     "email": "hi@noin.ai"
   },
-  "keywords": ["multi-agent", "codex", "gpt-5.2", "gemini", "code-generation", "code-review", "ui-design"]
+  "keywords": ["multi-agent", "codex", "gpt-5.2", "gemini", "code-generation", "code-review", "ui-design", "brainstorm", "a2a"]
 }
