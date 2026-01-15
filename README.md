@@ -17,6 +17,8 @@ claude plugin install github:noin-ai/plugins
 
 ## Agents
 
+### Code & Review Agents
+
 | Agent | Model | Purpose |
 |-------|-------|---------|
 | `codex-coder` | codex | Standard code generation |
@@ -24,7 +26,16 @@ claude plugin install github:noin-ai/plugins
 | `gpt52-reviewer` | gpt-5.2 | Thorough code review |
 | `gemini-designer` | gemini | UI/UX design |
 
+### Workflow Agents
+
+| Agent | Purpose |
+|-------|---------|
+| `browser-agent` | Web scraping, form interaction, screenshots |
+| `data-agent` | Data transformation, CSV/JSON conversion, filtering |
+
 ## Commands
+
+### Code Development
 
 | Command | Description |
 |---------|-------------|
@@ -36,6 +47,14 @@ claude plugin install github:noin-ai/plugins
 | `/design <component>` | UI design with Gemini |
 | `/design --implement <component>` | Design + generate code |
 
+### Custom Workflows
+
+| Command | Description |
+|---------|-------------|
+| `/create-workflow <description>` | Interactive workflow creation |
+| `/run-workflow <name>` | Execute a custom workflow |
+| `/list-workflows` | List available workflows |
+
 ## Architecture
 
 ```
@@ -46,21 +65,72 @@ Opus (main window - orchestrator)
     ├── Routes to specialized agents
     └── Integrates results
 
-Codex / Codex-max
-    ├── Code generation
-    ├── Feature implementation
-    └── Refactoring
+Code Agents
+    ├── Codex / Codex-max: Code generation
+    ├── GPT-5.2: Code review, security analysis
+    └── Gemini: UI/UX design
 
-GPT-5.2
-    ├── Code review
-    ├── Bug detection
-    └── Security analysis
-
-Gemini
-    ├── UI/UX design
-    ├── Component layouts
-    └── Design system
+Workflow Agents
+    ├── browser-agent: Web scraping, automation
+    └── data-agent: Data processing, transformation
 ```
+
+## Custom Workflows
+
+Create reusable automation workflows that chain multiple agents together.
+
+### Example: Web Scraping to CSV
+
+```bash
+# Create workflow interactively
+/create-workflow 抓取网页价格生成CSV
+
+# Run the workflow
+/run-workflow scrape-prices --url "https://example.com"
+```
+
+### Workflow Definition (YAML)
+
+```yaml
+name: scrape-prices
+description: Scrape prices and generate CSV
+
+inputs:
+  - name: url
+    required: true
+
+steps:
+  - id: fetch
+    agent: browser-agent
+    action: scrape
+    inputs:
+      url: ${{ inputs.url }}
+      selectors:
+        - name: product
+          selector: ".product-name"
+        - name: price
+          selector: ".price"
+
+  - id: convert
+    agent: data-agent
+    action: to_csv
+    inputs:
+      data: ${{ steps.fetch.outputs.data }}
+
+  - id: save
+    agent: file-agent
+    action: write
+    inputs:
+      path: ./output/prices.csv
+      content: ${{ steps.convert.outputs.content }}
+```
+
+### Workflow Storage
+
+| Scope | Path | Usage |
+|-------|------|-------|
+| Project | `.claude/noin-workflows/` | Project-specific, version controlled |
+| User | `~/.claude/noin-workflows/` | Personal, cross-project |
 
 ## Workflow Examples
 
@@ -78,28 +148,16 @@ User: /design --implement user login form
 7. Opus: Return design + code + review
 ```
 
-### Code Generation with Auto-Review
+### Web Scraping Workflow
 
 ```
-User: /code --complex implement payment processing
+User: /run-workflow scrape-prices --url "https://ai.ourines.com"
 
-1. Opus: Detect complex/security-sensitive task
-2. Opus → codex-max-coder: Generate secure code
-3. Codex-max: Implement with security considerations
-4. Opus → gpt52-reviewer: Security audit (auto-triggered)
-5. GPT-5.2: OWASP check, auth review
-6. Opus: Return code + security review
-```
-
-### Pre-Commit Review
-
-```
-User: /review --quick
-
-1. Opus: Get staged git changes
-2. Opus → gpt52-reviewer: Quick review
-3. GPT-5.2: Check critical issues only
-4. Opus: Return APPROVE or REQUEST_CHANGES
+1. workflow-executor: Load workflow definition
+2. browser-agent: Scrape webpage
+3. data-agent: Transform to CSV
+4. file-agent: Save to file
+5. Return: File path and summary
 ```
 
 ## Skills
@@ -111,6 +169,7 @@ Skills define when and how to route tasks to agents:
 | `code-generation` | write, implement, create, fix | codex-coder / codex-max-coder |
 | `code-review` | review, check, audit, security | gpt52-reviewer |
 | `ui-design` | design, UI, layout, component | gemini-designer |
+| `workflow-executor` | run-workflow, execute workflow | Multiple agents |
 
 ## Configuration
 
@@ -118,7 +177,9 @@ This plugin requires configured AI models:
 - **OpenAI API**: For codex, codex-max, gpt-5.2 models
 - **Google AI API**: For gemini model
 
-Models should be configured via Claude Code's `/model` command.
+For browser automation, optionally configure:
+- **Playwright MCP** or **Puppeteer MCP** for full browser control
+- Falls back to WebFetch for static pages
 
 ## Development
 

@@ -31,12 +31,21 @@ Opus 整合输出
 
 ### Agents (`agents/`)
 
+#### 代码开发 Agents
+
 | 文件 | Model | 用途 |
 |------|-------|------|
 | `codex-coder.md` | codex | 快速代码生成 |
 | `codex-max-coder.md` | codex-max | 复杂任务、安全敏感代码 |
 | `gpt52-reviewer.md` | gpt-5.2 | 代码质量、安全、性能审查 |
 | `gemini-designer.md` | gemini | UI 布局、样式、交互设计 |
+
+#### 工作流 Agents
+
+| 文件 | 用途 |
+|------|------|
+| `browser-agent.md` | 网页抓取、表单交互、截图、动态页面 |
+| `data-agent.md` | 数据转换 (CSV/JSON/YAML)、过滤、聚合、验证 |
 
 ### Skills (`skills/`)
 
@@ -45,14 +54,25 @@ Opus 整合输出
 | `code-generation.md` | 写代码请求 | codex-coder / codex-max-coder |
 | `code-review.md` | 审查请求 | gpt52-reviewer |
 | `ui-design.md` | UI 设计请求 | gemini-designer |
+| `workflow-executor.md` | 执行工作流 | 多 Agent 协作 |
 
 ### Commands (`commands/`)
+
+#### 代码开发命令
 
 | 命令 | 功能 |
 |------|------|
 | `/design` | UI 设计，可选 `--implement` 同时生成代码 |
 | `/code` | 代码生成，可选 `--complex` 使用 codex-max |
 | `/review` | 代码审查 |
+
+#### 工作流命令
+
+| 命令 | 功能 |
+|------|------|
+| `/create-workflow` | 交互式创建自定义工作流 |
+| `/run-workflow` | 执行已保存的工作流 |
+| `/list-workflows` | 列出所有可用工作流 |
 
 ## 工作流示例
 
@@ -111,11 +131,41 @@ claude plugin install ./plugins --scope local
 - OpenAI API (codex, codex-max, gpt-5.2)
 - Google AI API (gemini)
 
+### 4. 自定义工作流
+
+```
+用户: /create-workflow 抓取网页价格生成CSV
+
+交互式创建:
+1. 收集需求 (URL、字段、输出格式)
+2. 识别所需 agents (browser-agent, data-agent)
+3. 生成工作流定义
+4. 保存到 .claude/noin-workflows/
+
+用户: /run-workflow scrape-prices --url "https://ai.ourines.com"
+
+执行:
+1. 加载工作流定义
+2. browser-agent 抓取网页
+3. data-agent 转换为 CSV
+4. 保存文件并返回结果
+```
+
+## 工作流存储
+
+| 范围 | 路径 | 用途 |
+|------|------|------|
+| 项目级 | `.claude/noin-workflows/` | 项目专属，可版本控制 |
+| 用户级 | `~/.claude/noin-workflows/` | 个人工作流，跨项目使用 |
+
 ## 路线图
 
 - [x] 基础 agents 和 skills
 - [x] commands 实现
 - [x] agent 间通信协议（input/output protocols）
+- [x] 自定义工作流系统 (create/run/list-workflows)
+- [x] browser-agent 和 data-agent
 - [ ] 任务队列和并行执行
 - [ ] 结果缓存
 - [ ] 用户偏好配置
+- [ ] 多模型验证工作流
