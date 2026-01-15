@@ -1,16 +1,19 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "noin-ai-plugins",
+  "version": "1.0.0",
+  "description": "Multi-agent Claude Code plugins marketplace",
   "owner": {
     "name": "liubiao",
-    "url": "https://github.com/noin-ai"
+    "email": "liubiao@users.noreply.github.com"
   },
-  "description": "Multi-agent Claude Code plugins marketplace",
   "plugins": [
     {
       "name": "noin-plugins",
-      "source": "./..",
       "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
-      "version": "0.1.0"
+      "version": "0.1.0",
+      "source": "./plugins/noin-plugins",
+      "category": "development"
     }
   ]
 }
