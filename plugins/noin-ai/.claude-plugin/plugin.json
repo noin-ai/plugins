@@ -1,5 +1,5 @@
 {
-  "name": "noin-plugins",
+  "name": "noin-ai",
   "version": "0.1.0",
   "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
   "author": {

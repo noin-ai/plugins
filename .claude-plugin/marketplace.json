@@ -9,10 +9,10 @@
   },
   "plugins": [
     {
-      "name": "noin-plugins",
+      "name": "noin-ai",
       "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
       "version": "0.1.0",
-      "source": "./plugins/noin-plugins",
+      "source": "./plugins/noin-ai",
       "category": "development"
     }
   ]
