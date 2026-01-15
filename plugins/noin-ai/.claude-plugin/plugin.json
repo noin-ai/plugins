@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
   "author": {
-    "name": "liubiao"
+    "name": "noin-ai"
   },
   "keywords": ["multi-agent", "codex", "gpt-5.2", "gemini", "code-generation", "code-review", "ui-design"]
 }
