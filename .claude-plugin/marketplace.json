@@ -1,0 +1,20 @@
+{
+  "name": "noin-ai/plugins",
+  "description": "Multi-agent plugins for Claude Code - Codex, GPT-5.2, Gemini integration",
+  "version": "0.1.0",
+  "author": {
+    "name": "liubiao",
+    "url": "https://github.com/noin-ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noin-ai/plugins"
+  },
+  "plugins": [
+    {
+      "name": "noin-plugins",
+      "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
+      "path": "."
+    }
+  ]
+}
