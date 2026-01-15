@@ -113,9 +113,9 @@ claude plugin install ./plugins --scope local
 
 ## 路线图
 
-- [ ] 基础 agents 和 skills
-- [ ] commands 实现
-- [ ] agent 间通信协议
+- [x] 基础 agents 和 skills
+- [x] commands 实现
+- [x] agent 间通信协议（input/output protocols）
 - [ ] 任务队列和并行执行
 - [ ] 结果缓存
 - [ ] 用户偏好配置
