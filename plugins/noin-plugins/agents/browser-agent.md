@@ -1,7 +1,7 @@
 ---
 name: browser-agent
 description: 浏览器操作专家。网页抓取、表单交互、截图、动态页面处理。
-model: claude
+model: opus
 tools:
   - Read
   - Write

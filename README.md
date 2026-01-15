@@ -2,6 +2,10 @@
 
 Multi-agent Claude Code plugin leveraging specialized AI models for different tasks.
 
+🔗 **[noin.ai](https://noin.ai)** | 📦 [GitHub](https://github.com/noin-ai/plugins)
+
+> **No additional API keys required** - noinai has adapted these models for this plugin.
+
 ## Installation
 
 ```bash
@@ -174,16 +178,6 @@ Skills define when and how to route tasks to agents:
 | `code-review` | review, check, audit, security | gpt52-reviewer |
 | `ui-design` | design, UI, layout, component | gemini-designer |
 | `workflow-executor` | run-workflow, execute workflow | Multiple agents |
-
-## Configuration
-
-This plugin requires configured AI models:
-- **OpenAI API**: For codex, codex-max, gpt-5.2 models
-- **Google AI API**: For gemini model
-
-For browser automation, optionally configure:
-- **Playwright MCP** or **Puppeteer MCP** for full browser control
-- Falls back to WebFetch for static pages
 
 ## Development
 

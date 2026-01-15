@@ -1,7 +1,7 @@
 ---
 name: data-agent
 description: 数据处理专家。格式转换、清洗、过滤、聚合、验证。
-model: claude
+model: opus
 tools:
   - Read
   - Write
