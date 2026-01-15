@@ -1,26 +1,9 @@
 {
   "name": "noin-plugins",
-  "description": "Multi-agent system leveraging specialized AI models: Codex for coding, GPT-5.2 for review, Gemini for UI design",
   "version": "0.1.0",
+  "description": "Multi-agent system: Codex for coding, GPT-5.2 for review, Gemini for UI design",
   "author": {
-    "name": "liubiao",
-    "url": "https://github.com/noin-ai"
+    "name": "liubiao"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/noin-ai/plugins"
-  },
-  "license": "MIT",
-  "keywords": [
-    "multi-agent",
-    "codex",
-    "gpt-5.2",
-    "gemini",
-    "code-generation",
-    "code-review",
-    "ui-design"
-  ],
-  "commands": "./commands/",
-  "agents": "./agents/",
-  "skills": "./skills/"
+  "keywords": ["multi-agent", "codex", "gpt-5.2", "gemini", "code-generation", "code-review", "ui-design"]
 }
