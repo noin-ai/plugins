@@ -59,14 +59,14 @@ Multi-agent Claude Code plugin powered by [noin.ai](https://noin.ai).
 
 ---
 
-## Commands
+## Skills
 
 ### Code Development
 
-| Command | Description |
-|---------|-------------|
+| Skill | Description |
+|-------|-------------|
 | `/code <task>` | Generate code |
-| `/code --complex <task>` | Use advanced Codex for complex tasks |
+| `/code --complex <task>` | Use coder-advanced for complex tasks |
 | `/review` | Review staged changes |
 | `/review <file>` | Review specific file |
 | `/review --security` | Security-focused review |
@@ -78,16 +78,16 @@ Multi-agent Claude Code plugin powered by [noin.ai](https://noin.ai).
 
 ### Multi-Agent Brainstorm
 
-| Command | Description |
-|---------|-------------|
+| Skill | Description |
+|-------|-------------|
 | `/brainstorm <topic>` | 3 agents debate: Critic + Creative + Pragmatist |
 | `/brainstorm --rounds 3` | Extended 3-round discussion |
 | `/brainstorm --output plan` | Output as implementation plan |
 
 ### Workflows
 
-| Command | Description |
-|---------|-------------|
+| Skill | Description |
+|-------|-------------|
 | `/create-workflow` | Create custom workflow interactively |
 | `/run-workflow <name>` | Execute a saved workflow |
 | `/list-workflows` | List available workflows |
@@ -128,9 +128,8 @@ Claude Opus (orchestrator)
 
 | Term | Definition |
 |------|------------|
-| **Agent** | A specialized AI worker that runs in an isolated context with specific tools and model |
-| **Skill** | Instructions that Opus reads and executes directly in the main conversation |
-| **Command** | User-facing `/slash` commands that load skills |
+| **Agent** | A specialized AI worker that runs in a separate context with specific tools and model |
+| **Skill** | Instructions that Claude reads and executes, accessible via `/skill-name` |
 | **Workflow** | A YAML-defined sequence of agent actions |
 
 ---

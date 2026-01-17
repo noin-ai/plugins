@@ -54,14 +54,14 @@ Claude Code 多智能体插件，由 [noin.ai](https://noin.ai) 提供 API 支�
 
 ---
 
-## 命令
+## 技能
 
 ### 代码开发
 
-| 命令 | 说明 |
+| 技能 | 说明 |
 |------|------|
 | `/code <任务>` | 生成代码 |
-| `/code --complex <任务>` | 使用高级 Codex 处理复杂任务 |
+| `/code --complex <任务>` | 使用 coder-advanced 处理复杂任务 |
 | `/review` | 审查暂存的更改 |
 | `/review <文件>` | 审查指定文件 |
 | `/review --security` | 安全专项审查 |
@@ -73,7 +73,7 @@ Claude Code 多智能体插件，由 [noin.ai](https://noin.ai) 提供 API 支�
 
 ### 多智能体头脑风暴
 
-| 命令 | 说明 |
+| 技能 | 说明 |
 |------|------|
 | `/brainstorm <主题>` | 3 个智能体辩论：批评者 + 创意者 + 务实者 |
 | `/brainstorm --rounds 3` | 扩展到 3 轮讨论 |
@@ -81,7 +81,7 @@ Claude Code 多智能体插件，由 [noin.ai](https://noin.ai) 提供 API 支�
 
 ### 工作流
 
-| 命令 | 说明 |
+| 技能 | 说明 |
 |------|------|
 | `/create-workflow` | 交互式创建自定义工作流 |
 | `/run-workflow <名称>` | 执行已保存的工作流 |
@@ -124,8 +124,7 @@ Claude Opus（协调者）
 | 术语 | 定义 |
 |------|------|
 | **Agent（智能体）** | 在独立上下文中运行的专用 AI 工作者，拥有特定工具和模型 |
-| **Skill（技能）** | Opus 读取后在主对话中直接执行的指令 |
-| **Command（命令）** | 用户使用的 `/斜杠` 命令，加载对应的 Skill |
+| **Skill（技能）** | Claude 读取并执行的指令，通过 `/skill-name` 访问 |
 | **Workflow（工作流）** | YAML 定义的智能体动作序列 |
 
 ---
