@@ -1,14 +1,24 @@
 ---
 name: brainstorm
-description: Multi-agent debate mode where different AI models discuss, argue, and synthesize perspectives on a problem
+description: Multi-agent debate where Critic, Creative, and Pragmatist discuss a problem through 2-3 rounds
+user_invocable: true
+arguments:
+  - name: topic
+    description: The question or idea to brainstorm
+    required: true
+  - name: rounds
+    description: Number of debate rounds (2-3)
+    type: number
+    default: 2
+  - name: output
+    description: Output format (summary, plan, todos)
+    default: summary
 triggers:
   - "brainstorm"
   - "debate"
   - "multi-agent discussion"
   - "get different perspectives"
   - "pros and cons"
-  - "analyze from multiple angles"
-  - "what do you think about"
 ---
 
 # Brainstorm Skill
