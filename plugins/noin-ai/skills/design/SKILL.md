@@ -1,6 +1,6 @@
 ---
 name: design
-description: UI/UX design using Gemini. Creates layouts, components, and design specs.
+description: UI/UX design using designer agent. Creates layouts, components, and design specs.
 user_invocable: true
 arguments:
   - name: component

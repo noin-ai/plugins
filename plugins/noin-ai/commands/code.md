@@ -1,11 +1,14 @@
 ---
-description: Generate code using Codex agents
+description: Generate code using coder agents
 argument-hint: <task> [--complex]
 allowed-tools:
   - Task
+  - TodoWrite
+  - AskUserQuestion
+  - EnterPlanMode
 ---
 
-Generate code using the appropriate Codex agent.
+Generate code using the appropriate agent.
 
 ## Usage
 

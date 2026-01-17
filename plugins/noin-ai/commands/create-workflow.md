@@ -4,6 +4,8 @@ argument-hint: [description] [--scope user|project]
 allowed-tools:
   - Write
   - AskUserQuestion
+  - TodoWrite
+  - EnterPlanMode
 ---
 
 通过对话引导创建自定义工作流 YAML 文件。

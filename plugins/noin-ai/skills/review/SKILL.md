@@ -1,6 +1,6 @@
 ---
 name: review
-description: Code review using GPT-5.2. Thorough analysis of code quality, security, and best practices.
+description: Code review using reviewer agent. Thorough analysis of code quality, security, and best practices.
 user_invocable: true
 arguments:
   - name: target

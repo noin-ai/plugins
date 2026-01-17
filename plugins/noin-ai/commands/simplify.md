@@ -5,6 +5,8 @@ allowed-tools:
   - Task
   - Read
   - Edit
+  - TodoWrite
+  - AskUserQuestion
 ---
 
 Simplify code using the code-simplifier agent.

@@ -5,6 +5,7 @@ allowed-tools:
   - Task
   - Read
   - Glob
+  - TodoWrite
 ---
 
 执行已创建的工作流定义。

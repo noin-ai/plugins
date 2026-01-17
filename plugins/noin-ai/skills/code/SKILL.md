@@ -1,13 +1,13 @@
 ---
 name: code
-description: Generate code using Codex agents. Use /code for standard tasks, /code --complex for advanced.
+description: Generate code using coder agents. Use /code for standard tasks, /code --complex for advanced.
 user_invocable: true
 arguments:
   - name: task
     description: What code to generate
     required: true
   - name: complex
-    description: Use codex-max for complex tasks
+    description: Use coder-advanced for complex tasks
     type: boolean
     default: false
 triggers:
@@ -23,7 +23,7 @@ triggers:
 
 # Code Generation Skill
 
-Generate code using the appropriate Codex agent based on task complexity.
+Generate code using the appropriate agent based on task complexity.
 
 ## Usage
 

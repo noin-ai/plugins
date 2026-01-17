@@ -1,8 +1,11 @@
 ---
-description: UI/UX design using Gemini
+description: UI/UX design using designer agent
 argument-hint: <component> [--implement] [--dark]
 allowed-tools:
   - Task
+  - TodoWrite
+  - AskUserQuestion
+  - EnterPlanMode
 ---
 
 Design UI components and layouts.

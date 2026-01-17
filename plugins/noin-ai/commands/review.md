@@ -1,10 +1,12 @@
 ---
-description: Code review using GPT-5.2
+description: Code review using reviewer agent
 argument-hint: [file|staged] [--quick] [--security]
 allowed-tools:
   - Task
   - Read
   - Bash
+  - TodoWrite
+  - AskUserQuestion
 ---
 
 Thorough code review for quality, security, and best practices.
