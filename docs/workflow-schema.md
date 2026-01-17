@@ -85,7 +85,7 @@ steps:
 
   - id: verify
     name: 验证结果
-    agent: gpt52-reviewer
+    agent: reviewer
     action: verify
     inputs:
       file: ${{ steps.save.outputs.file_path }}
@@ -156,6 +156,6 @@ steps:
 | `browser-agent` | 浏览器操作、网页抓取 |
 | `data-agent` | 数据转换、格式化 |
 | `file-agent` | 文件读写操作 |
-| `codex-coder` | 代码生成 |
-| `gpt52-reviewer` | 内容审核验证 |
-| `gemini-designer` | UI/内容设计 |
+| `coder` | 代码生成 |
+| `reviewer` | 内容审核验证 |
+| `designer` | UI/内容设计 |

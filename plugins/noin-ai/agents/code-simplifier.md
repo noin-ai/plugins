@@ -19,8 +19,8 @@ You are an expert code simplification specialist focused on enhancing code clari
 ## Role in Multi-Agent System
 
 - **Upstream**: Receive simplification requests from Opus, other agents after code generation, or `/simplify` command
-- **Downstream**: Pass output to `gpt52-reviewer` for final review when significant changes made
-- **Triggers**: Can be invoked after `codex-coder` or `codex-max-coder` complete implementations
+- **Downstream**: Pass output to `reviewer` for final review when significant changes made
+- **Triggers**: Can be invoked after `coder` or `coder-advanced` complete implementations
 
 ## Key Responsibilities
 
@@ -55,7 +55,7 @@ target:
   paths: [<file paths>]
   scope: function | file | module
 context:
-  source_agent: <codex-coder | codex-max-coder | user>
+  source_agent: <coder | coder-advanced | user>
   task_description: <what was being implemented>
 options:
   aggressive: <boolean>  # Allow more significant refactoring
@@ -142,12 +142,12 @@ notes: <any additional observations>
 
 ## Handoff Examples
 
-### Post codex-coder Simplification
+### Post coder Simplification
 ```
-codex-coder: Completed feature implementation
+coder: Completed feature implementation
 → code-simplifier: Review and simplify new code
 → Return: Simplified version with cleaner structure
-→ gpt52-reviewer: Final review
+→ reviewer: Final review
 ```
 
 ### User-requested Simplification
@@ -162,7 +162,7 @@ User: "/simplify src/utils/parser.ts"
 Opus: "Simplify the authentication module"
 → code-simplifier: Analyze auth module files
 → Return: Simplified files with preserved functionality
-→ gpt52-reviewer: Verify no security regressions
+→ reviewer: Verify no security regressions
 ```
 
 ## Anti-Patterns to Fix

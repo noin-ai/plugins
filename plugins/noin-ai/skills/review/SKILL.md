@@ -29,7 +29,7 @@ triggers:
 
 # Code Review Skill
 
-Trigger thorough code review using `noin-ai:gpt52-reviewer` agent.
+Trigger thorough code review using `noin-ai:reviewer` agent.
 
 ## Usage
 
@@ -58,7 +58,7 @@ Trigger thorough code review using `noin-ai:gpt52-reviewer` agent.
     ↓
 Resolve target (file/dir/staged)
     ↓
-Task(noin-ai:gpt52-reviewer, review_type, target)
+Task(noin-ai:reviewer, review_type, target)
     ↓
 Return structured feedback
 ```

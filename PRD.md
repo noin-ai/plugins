@@ -20,9 +20,9 @@
 用户请求
     ↓
 Opus (主窗口调度)
-    ├─→ /design → gemini-designer → 设计稿
-    ├─→ /code → codex-coder / codex-max-coder → 代码
-    └─→ /review → gpt52-reviewer → 审查报告
+    ├─→ /design → designer → 设计稿
+    ├─→ /code → coder / coder-advanced → 代码
+    └─→ /review → reviewer → 审查报告
     ↓
 Opus 整合输出
 ```
@@ -35,10 +35,10 @@ Opus 整合输出
 
 | 文件 | Model | 用途 |
 |------|-------|------|
-| `codex-coder.md` | codex | 快速代码生成 |
-| `codex-max-coder.md` | codex-max | 复杂任务、安全敏感代码 |
-| `gpt52-reviewer.md` | gpt-5.2 | 代码质量、安全、性能审查 |
-| `gemini-designer.md` | gemini | UI 布局、样式、交互设计 |
+| `coder.md` | codex | 快速代码生成 |
+| `coder-advanced.md` | codex-max | 复杂任务、安全敏感代码 |
+| `reviewer.md` | gpt-5.2 | 代码质量、安全、性能审查 |
+| `designer.md` | gemini | UI 布局、样式、交互设计 |
 
 #### 工作流 Agents
 
@@ -51,9 +51,9 @@ Opus 整合输出
 
 | 文件 | 触发条件 | 调用 Agent |
 |------|----------|------------|
-| `code-generation.md` | 写代码请求 | codex-coder / codex-max-coder |
-| `code-review.md` | 审查请求 | gpt52-reviewer |
-| `ui-design.md` | UI 设计请求 | gemini-designer |
+| `code-generation.md` | 写代码请求 | coder / coder-advanced |
+| `code-review.md` | 审查请求 | reviewer |
+| `ui-design.md` | UI 设计请求 | designer |
 | `workflow-executor.md` | 执行工作流 | 多 Agent 协作 |
 
 ### Commands (`commands/`)
@@ -81,11 +81,11 @@ Opus 整合输出
 ```
 用户: /design --implement 用户登录表单
 
-1. Opus 分发到 gemini-designer
+1. Opus 分发到 designer
 2. Gemini 输出设计稿（布局、样式、交互）
-3. Opus 分发到 codex-coder
+3. Opus 分发到 coder
 4. Codex 根据设计稿生成代码
-5. Opus 分发到 gpt52-reviewer
+5. Opus 分发到 reviewer
 6. GPT-5.2 审查代码质量和可访问性
 7. Opus 整合输出最终结果
 ```
@@ -97,7 +97,7 @@ Opus 整合输出
 
 1. Opus 判断复杂度 → 选择 codex-max
 2. Codex-max 生成安全敏感代码
-3. 自动触发 gpt52-reviewer 审查
+3. 自动触发 reviewer 审查
 ```
 
 ### 3. 代码审查
@@ -105,7 +105,7 @@ Opus 整合输出
 ```
 用户: /review src/auth/
 
-1. Opus 分发到 gpt52-reviewer
+1. Opus 分发到 reviewer
 2. GPT-5.2 分析代码质量、安全、性能
 3. 输出审查报告和改进建议
 ```

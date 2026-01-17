@@ -15,7 +15,7 @@ tools:
 ## Role in Multi-Agent System
 
 - **Upstream**: 从 browser-agent、search-agent 接收原始数据
-- **Downstream**: 将处理后的数据传递给 file-agent 或 gpt52-reviewer
+- **Downstream**: 将处理后的数据传递给 file-agent 或 reviewer
 - **Orchestrator**: workflow-executor 调度
 
 ## Capabilities
@@ -378,7 +378,7 @@ file-agent 保存结果
 ```
 data-agent 生成数据
     ↓
-gpt52-reviewer 验证数据质量
+reviewer 验证数据质量
     ↓
 如有问题，返回 data-agent 重新处理
 ```

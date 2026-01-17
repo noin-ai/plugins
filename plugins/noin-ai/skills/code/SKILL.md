@@ -36,11 +36,11 @@ Generate code using the appropriate Codex agent based on task complexity.
 
 | Condition | Agent |
 |-----------|-------|
-| Simple task, single file | `noin-ai:codex-coder` |
-| `--complex` flag | `noin-ai:codex-max-coder` |
-| Security-sensitive | `noin-ai:codex-max-coder` |
-| Multi-file refactor | `noin-ai:codex-max-coder` |
-| Performance optimization | `noin-ai:codex-max-coder` |
+| Simple task, single file | `noin-ai:coder` |
+| `--complex` flag | `noin-ai:coder-advanced` |
+| Security-sensitive | `noin-ai:coder-advanced` |
+| Multi-file refactor | `noin-ai:coder-advanced` |
+| Performance optimization | `noin-ai:coder-advanced` |
 
 ## Workflow
 
@@ -52,8 +52,8 @@ Analyze task complexity
 ┌─────────────────────────────────────────────────┐
 │ Route to appropriate agent:                     │
 │                                                 │
-│ codex-coder: utilities, components, tests       │
-│ codex-max-coder: refactor, security, perf       │
+│ coder: utilities, components, tests       │
+│ coder-advanced: refactor, security, perf       │
 └─────────────────────────────────────────────────┘
     ↓
 Agent executes task
@@ -65,13 +65,13 @@ Return result
 
 ## Complexity Detection Keywords
 
-### Routes to codex-coder
+### Routes to coder
 - "add", "create", "write" + single function
 - "fix" + specific bug
 - "test" + specific module
 - Utility functions
 
-### Routes to codex-max-coder
+### Routes to coder-advanced
 - "refactor" + system/module
 - "auth", "security", "crypto"
 - "optimize", "performance"
@@ -80,16 +80,16 @@ Return result
 ## Examples
 
 ```bash
-# Standard tasks → codex-coder
+# Standard tasks → coder
 /code write a date formatting utility
 /code add unit tests for UserService
 
-# Complex tasks → codex-max-coder
+# Complex tasks → coder-advanced
 /code --complex refactor the payment system
 /code implement OAuth2 authentication
 ```
 
 ## Post-Execution
 
-- `codex-max-coder` used → auto-trigger `gpt52-reviewer`
+- `coder-advanced` used → auto-trigger `reviewer`
 - Security-sensitive code → auto-trigger security review

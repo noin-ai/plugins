@@ -14,9 +14,9 @@ Launch a multi-agent brainstorming session where three AI agents with different 
 
 | Agent | Role | Focus |
 |-------|------|-------|
-| `noin-ai:gpt52-reviewer` | Critic | Quality, security, risks |
-| `noin-ai:gemini-designer` | Creative | User experience, innovation |
-| `noin-ai:codex-max-coder` | Pragmatist | Implementation, cost |
+| `noin-ai:reviewer` | Critic | Quality, security, risks |
+| `noin-ai:designer` | Creative | User experience, innovation |
+| `noin-ai:coder` | Pragmatist | Implementation, cost |
 
 ## Usage
 

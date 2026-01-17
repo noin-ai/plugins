@@ -17,8 +17,8 @@ Generate code using the appropriate Codex agent.
 
 ## Agent Selection
 
-- Standard tasks → `codex-coder`
-- `--complex` flag or security/refactor tasks → `codex-max-coder`
+- Standard tasks → `coder`
+- `--complex` flag or security/refactor tasks → `coder-advanced`
 
 ## Execution
 

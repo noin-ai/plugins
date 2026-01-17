@@ -31,7 +31,7 @@ triggers:
 
 # UI Design Skill
 
-Design UI components and layouts using `noin-ai:gemini-designer` agent.
+Design UI components and layouts using `noin-ai:designer` agent.
 
 ## Usage
 
@@ -46,11 +46,11 @@ Design UI components and layouts using `noin-ai:gemini-designer` agent.
 ```
 /design <component>
     ↓
-Task(noin-ai:gemini-designer, component, options)
+Task(noin-ai:designer, component, options)
     ↓
 Return design spec
     ↓
-If --implement: Task(noin-ai:codex-coder, implement design)
+If --implement: Task(noin-ai:coder, implement design)
 ```
 
 ## Output

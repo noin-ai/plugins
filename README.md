@@ -50,10 +50,10 @@ Multi-agent Claude Code plugin powered by [noin.ai](https://noin.ai).
 
 | Agent | Model | Purpose |
 |-------|-------|---------|
-| `codex-coder` | Codex | Standard code generation |
-| `codex-max-coder` | Codex (advanced) | Complex/security-critical code |
-| `gpt52-reviewer` | GPT-5.2 | Code review, security analysis |
-| `gemini-designer` | Gemini | UI/UX design |
+| `coder` | Codex | Standard code generation |
+| `coder-advanced` | Codex (advanced) | Complex/security-critical code |
+| `reviewer` | GPT-5.2 | Code review, security analysis |
+| `designer` | Gemini | UI/UX design |
 | `browser-agent` | - | Web scraping, screenshots |
 | `data-agent` | - | Data transformation, CSV/JSON |
 
@@ -106,15 +106,15 @@ Claude Opus (orchestrator)
          ↓
     ┌────────────────────────────────────┐
     │ Code Agents                        │
-    │ ├── codex-coder                    │
-    │ ├── codex-max-coder                │
-    │ ├── gpt52-reviewer                 │
-    │ └── gemini-designer                │
+    │ ├── coder                    │
+    │ ├── coder-advanced                │
+    │ ├── reviewer                 │
+    │ └── designer                │
     ├────────────────────────────────────┤
     │ Brainstorm Mode                    │
-    │ ├── Critic (gpt52-reviewer)        │
-    │ ├── Creative (gemini-designer)     │
-    │ └── Pragmatist (codex-max-coder)   │
+    │ ├── Critic (reviewer)        │
+    │ ├── Creative (designer)     │
+    │ └── Pragmatist (coder-advanced)   │
     ├────────────────────────────────────┤
     │ Workflow Agents                    │
     │ ├── browser-agent                  │
