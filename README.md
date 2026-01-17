@@ -128,9 +128,9 @@ Claude Opus (orchestrator)
 
 | Term | Definition |
 |------|------------|
-| **Agent** | A specialized AI model wrapper that handles specific tasks |
-| **Skill** | Routing rules that determine which agent handles a request |
-| **Command** | User-facing `/slash` commands that trigger skills |
+| **Agent** | A specialized AI worker that runs in an isolated context with specific tools and model |
+| **Skill** | Instructions that Opus reads and executes directly in the main conversation |
+| **Command** | User-facing `/slash` commands that load skills |
 | **Workflow** | A YAML-defined sequence of agent actions |
 
 ---
