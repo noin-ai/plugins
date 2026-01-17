@@ -72,6 +72,9 @@ Multi-agent Claude Code plugin powered by [noin.ai](https://noin.ai).
 | `/review --security` | Security-focused review |
 | `/design <component>` | Create UI design spec |
 | `/design --implement` | Design + generate code |
+| `/simplify` | Simplify recently modified code |
+| `/simplify <file>` | Simplify specific file |
+| `/simplify --aggressive` | Allow more significant refactoring |
 
 ### Multi-Agent Brainstorm
 
